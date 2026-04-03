@@ -34,8 +34,10 @@ export const translations = {
     searchPlaceholder: 'Search for section...',
     themeToggle: 'Toggle theme',
     provinceDefault: 'Province or territory',
-    english: 'English',
-    french: 'French',
+    faqTitle: 'FAQ & Help',
+    askQuestion: 'Ask a question...',
+    ask: 'Ask',
+    commonFaqs: 'Common FAQs',
   },
   fr: {
     appName: 'Bienvenue au Canada',
@@ -74,5 +76,9 @@ export const translations = {
     provinceDefault: 'Province ou territoire',
     english: 'Anglais',
     french: 'Français',
+    faqTitle: 'FAQ et aide',
+    askQuestion: 'Posez une question...',
+    ask: 'Demander',
+    commonFaqs: 'FAQ courantes',
   },
 };

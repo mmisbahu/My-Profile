@@ -1,11 +1,15 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../../App';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLanguage, setProvince } from '../store/slices/appSlice';
 import { provinces } from '../data/content';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { translations } from '../locales/translations';
 
 export default function OnboardingScreen({ navigation }) {
-  const { language, setLanguage, province, setProvince, t } = useContext(AppContext);
+  const dispatch = useDispatch();
+  const { language, province } = useSelector(state => state.app);
   const [selectedProvince, setSelectedProvince] = useState(province);
+  const t = translations[language];
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -20,7 +24,7 @@ export default function OnboardingScreen({ navigation }) {
               <TouchableOpacity
                 key={lang}
                 style={[styles.languageButton, language === lang && styles.languageSelected]}
-                onPress={() => setLanguage(lang)}
+                onPress={() => dispatch(setLanguage(lang))}
               >
                 <Text style={[styles.languageText, language === lang && styles.languageTextSelected]}>{t[lang === 'en' ? 'english' : 'french']}</Text>
               </TouchableOpacity>
@@ -47,8 +51,8 @@ export default function OnboardingScreen({ navigation }) {
           style={[styles.continueButton, !selectedProvince && styles.disabledButton]}
           disabled={!selectedProvince}
           onPress={() => {
-            setProvince(selectedProvince);
-            navigation.replace('Home');
+            dispatch(setProvince(selectedProvince));
+            navigation.replace('Login');
           }}
         >
           <Text style={styles.continueText}>{t.continue}</Text>

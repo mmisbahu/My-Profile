@@ -1,45 +1,39 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../App';
 import { sections } from '../data/content';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-const checklist = [
-  {
-    title: 'Week 1',
-    items: [
-      'Activate your phone plan',
-      'Open a Canadian bank account',
-      'Locate the nearest grocery store and transit stops',
-      'Meet a local settlement service',
-    ],
-  },
-  {
-    title: 'Week 2',
-    items: [
-      'Apply for SIN',
-      'Start your provincial health card application',
-      'Research newcomer housing programs',
-      'Join a LINC or French class waitlist',
-    ],
-  },
-  {
-    title: 'Weeks 3–4',
-    items: [
-      'Confirm PR card status',
-      'Search jobs and prepare a resume',
-      'Register children for school',
-      'Explore community and support groups',
-    ],
-  },
-];
 
 export default function ChecklistScreen({ navigation }) {
   const { t, theme } = useContext(AppContext);
   const [checkedItems, setCheckedItems] = useState({});
 
-  const toggleItem = (index, itemIndex) => {
-    const key = `${index}-${itemIndex}`;
-    setCheckedItems((prev) => ({ ...prev, [key]: !prev[key] }));
+  const checklistSection = sections.find(s => s.id === 'checklist');
+  const checklistItems = checklistSection ? checklistSection.details : [];
+
+  useEffect(() => {
+    const loadCheckedItems = async () => {
+      try {
+        const stored = await AsyncStorage.getItem('checkedItems');
+        if (stored) {
+          setCheckedItems(JSON.parse(stored));
+        }
+      } catch (error) {
+        console.error('Error loading checked items:', error);
+      }
+    };
+    loadCheckedItems();
+  }, []);
+
+  const toggleItem = async (weekIndex, itemIndex) => {
+    const key = `${weekIndex}-${itemIndex}`;
+    const newChecked = { ...checkedItems, [key]: !checkedItems[key] };
+    setCheckedItems(newChecked);
+    try {
+      await AsyncStorage.setItem('checkedItems', JSON.stringify(newChecked));
+    } catch (error) {
+      console.error('Error saving checked items:', error);
+    }
   };
 
   return (
@@ -48,6 +42,63 @@ export default function ChecklistScreen({ navigation }) {
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backText}>← {t.back}</Text>
         </TouchableOpacity>
+
+        <Text style={[styles.title, theme === 'dark' && styles.titleDark]}>{t.checklistTitle}</Text>
+
+        {checklistItems.map((week, weekIndex) => (
+          <View key={weekIndex} style={styles.weekContainer}>
+            <Text style={[styles.weekTitle, theme === 'dark' && styles.weekTitleDark]}>{week.title}</Text>
+            <Text style={[styles.weekDescription, theme === 'dark' && styles.weekDescriptionDark]}>{week.description}</Text>
+            {week.items && week.items.map((item, itemIndex) => (
+              <TouchableOpacity
+                key={itemIndex}
+                style={styles.itemContainer}
+                onPress={() => toggleItem(weekIndex, itemIndex)}
+              >
+                <Text style={[styles.checkbox, theme === 'dark' && styles.checkboxDark]}>
+                  {checkedItems[`${weekIndex}-${itemIndex}`] ? '☑' : '☐'}
+                </Text>
+                <Text style={[styles.itemText, theme === 'dark' && styles.itemTextDark]}>{item}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+  return (
+    <SafeAreaView style={[styles.safeArea, theme === 'dark' && styles.safeAreaDark]}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          <Text style={styles.backText}>← {t.back}</Text>
+        </TouchableOpacity>
+
+        <Text style={[styles.title, theme === 'dark' && styles.titleDark]}>{t.checklistTitle}</Text>
+
+        {checklistItems.map((week, weekIndex) => (
+          <View key={weekIndex} style={styles.weekContainer}>
+            <Text style={[styles.weekTitle, theme === 'dark' && styles.weekTitleDark]}>{week.title}</Text>
+            <Text style={[styles.weekDescription, theme === 'dark' && styles.weekDescriptionDark]}>{week.description}</Text>
+            {week.items && week.items.map((item, itemIndex) => (
+              <TouchableOpacity
+                key={itemIndex}
+                style={styles.itemContainer}
+                onPress={() => toggleItem(weekIndex, itemIndex)}
+              >
+                <Text style={[styles.checkbox, theme === 'dark' && styles.checkboxDark]}>
+                  {checkedItems[`${weekIndex}-${itemIndex}`] ? '☑' : '☐'}
+                </Text>
+                <Text style={[styles.itemText, theme === 'dark' && styles.itemTextDark]}>{item}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
         <Text style={styles.title}>{t.checklistTitle}</Text>
         <Text style={styles.summary}>{`${t.lastUpdated}: 2026-03-01`}</Text>
 

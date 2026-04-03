@@ -1,13 +1,18 @@
-import React, { useContext, useMemo } from 'react';
-import { AppContext } from '../../App';
+import React, { useMemo } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setTheme } from '../store/slices/appSlice';
+import { logout } from '../store/slices/userSlice';
 import { sections } from '../data/content';
 import SectionCard from '../components/SectionCard';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { translations } from '../locales/translations';
 
 const featured = ['airport', 'checklist', 'documents', 'housing', 'healthcare', 'education', 'community', 'directory', 'help'];
 
 export default function HomeScreen({ navigation }) {
-  const { province, language, t, theme, setTheme } = useContext(AppContext);
+  const dispatch = useDispatch();
+  const { province, language, theme } = useSelector(state => state.app);
+  const t = translations[language];
   const visibleSections = useMemo(
     () => sections.filter((item) => featured.includes(item.id)),
     []
@@ -22,12 +27,20 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.subtitle}>{t.homeSubtitle}</Text>
             <Text style={styles.province}>{province || t.provinceDefault}</Text>
           </View>
-          <TouchableOpacity
-            style={[styles.themeButton, theme === 'dark' && styles.themeButtonDark]}
-            onPress={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          >
-            <Text style={styles.themeText}>{theme === 'dark' ? '☀️' : '🌙'}</Text>
-          </TouchableOpacity>
+          <View style={styles.headerButtons}>
+            <TouchableOpacity
+              style={[styles.themeButton, theme === 'dark' && styles.themeButtonDark]}
+              onPress={() => dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))}
+            >
+              <Text style={styles.themeText}>{theme === 'dark' ? '☀️' : '🌙'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.logoutButton}
+              onPress={() => dispatch(logout())}
+            >
+              <Text style={styles.logoutText}>Logout</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         {visibleSections.map((section) => (
@@ -42,6 +55,8 @@ export default function HomeScreen({ navigation }) {
                 navigation.navigate('Checklist');
               } else if (section.id === 'directory') {
                 navigation.navigate('Directory');
+              } else if (section.id === 'help') {
+                navigation.navigate('FAQ');
               } else {
                 navigation.navigate('Section', { sectionId: section.id });
               }
@@ -69,6 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
     gap: 16,
   },
   title: {
@@ -87,6 +103,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6b7280',
   },
+  headerButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
   themeButton: {
     width: 48,
     height: 48,
@@ -104,5 +124,18 @@ const styles = StyleSheet.create({
   },
   themeText: {
     fontSize: 22,
+  },
+  logoutButton: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    backgroundColor: '#ef4444',
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoutText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
   },
 });

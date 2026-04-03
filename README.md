@@ -1,12 +1,13 @@
 # Welcome to Canada — Newcomer Companion App
 
-A cross-platform mobile prototype built with Expo and React Native for newcomers to Canada. This MVP contains onboarding, localized guides, offline-friendly checklists, and a polished welcome experience.
+A full-scale, professional mobile application built with Expo and React Native for newcomers to Canada. This comprehensive app includes user authentication, state management, offline capabilities, and a polished user experience.
 
 ## What’s Included
 
+- **User Authentication** with Firebase for secure login and signup
 - **Onboarding** with province/territory selection and language preference
 - **Airport Arrival Guide** with CBSA expectations and official links
-- **First 30 Days Checklist** with interactive completion tracking
+- **First 30 Days Checklist** with interactive completion tracking and persistence
 - **Government Documents & ID** information for SIN, health cards, PR cards, driver’s licenses, and CRA
 - **Housing & Settlement** guidance for temporary housing, renting, and tenant rights
 - **Healthcare** overview with family doctor options and emergency info
@@ -14,14 +15,24 @@ A cross-platform mobile prototype built with Expo and React Native for newcomers
 - **Education & Language** resources for LINC and credential recognition
 - **Community & Services** section for local support and newcomer resources
 - **Consult & Help** directory for legal aid, helplines, and FAQs
+- **Push Notifications** for reminders and updates
+- **Dark Mode** theme toggle for modern usability
+- **Offline-First** design with local data storage
+- **Multi-language** support (English and French)
 
 ## Technical Highlights
 
 - **Framework:** React Native with Expo
+- **State Management:** Redux Toolkit with Redux Persist
+- **Authentication:** Firebase Auth
+- **Database:** Firebase Firestore (for future dynamic content)
+- **Storage:** AsyncStorage for local persistence
+- **UI Library:** React Native Paper for consistent design
 - **Cross-platform:** iOS, Android, and web-ready
-- **Offline-ready:** Core content is stored locally in JSON
+- **Testing:** Jest with React Native Testing Library
+- **Linting:** ESLint for code quality
+- **Offline-ready:** Core content stored locally in JSON
 - **Localization:** English and French support with expandable text resources
-- **Dark Mode:** Theme toggle included for modern usability
 - **Accessibility:** Simple, clean UI with readable layout and large tap targets
 
 ## Project Structure
@@ -32,21 +43,77 @@ A cross-platform mobile prototype built with Expo and React Native for newcomers
 ├── babel.config.js
 ├── package.json
 ├── README.md
+├── __tests__/
+│   └── userSlice.test.js
 └── src
     ├── components
     │   └── SectionCard.js
     ├── data
     │   └── content.js
+    ├── firebase.js
     ├── locales
     │   └── translations.js
-    └── screens
-        ├── ChecklistScreen.js
-        ├── HomeScreen.js
-        ├── OnboardingScreen.js
-        └── SectionScreen.js
+    ├── screens
+    │   ├── ChecklistScreen.js
+    │   ├── DirectoryScreen.js
+    │   ├── FAQScreen.js
+    │   ├── HomeScreen.js
+    │   ├── LoginScreen.js
+    │   ├── OnboardingScreen.js
+    │   ├── SectionScreen.js
+    │   └── SignupScreen.js
+    └── store
+        ├── index.js
+        ├── rootReducer.js
+        └── slices
+            ├── appSlice.js
+            ├── checklistSlice.js
+            └── userSlice.js
 ```
 
-## Run the App
+## Setup Instructions
+
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Configure Firebase:**
+   - Create a Firebase project at https://console.firebase.google.com/
+   - Enable Authentication and Firestore
+   - Update `src/firebase.js` with your Firebase config
+
+3. **Run the App:**
+   ```bash
+   npm start
+   ```
+
+4. **Run Tests:**
+   ```bash
+   npm test
+   ```
+
+5. **Lint Code:**
+   ```bash
+   npm run lint
+   ```
+
+## Deployment
+
+- **Expo Build:** Use `expo build:android` or `expo build:ios` for production builds
+- **CI/CD:** Configure with GitHub Actions or similar for automated testing and deployment
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Write tests for new features
+4. Ensure all tests pass and code is linted
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
 
 1. Install dependencies:
    ```bash

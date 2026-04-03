@@ -54,14 +54,32 @@ export const sections = [
       {
         title: 'Week 1',
         description: 'Register for a phone plan, exchange money, meet settlement agency, open a bank account, locate nearby grocery and transit routes.',
+        items: [
+          'Activate your phone plan',
+          'Open a Canadian bank account',
+          'Locate the nearest grocery store and transit stops',
+          'Meet a local settlement service',
+        ],
       },
       {
         title: 'Week 2',
         description: 'Apply for SIN, provincial health card, and start exploring housing options. Enroll in a language class if needed.',
+        items: [
+          'Apply for SIN',
+          'Start your provincial health card application',
+          'Research newcomer housing programs',
+          'Join a LINC or French class waitlist',
+        ],
       },
       {
         title: 'Weeks 3-4',
         description: 'Search for work, confirm your PR card process, register for school, and start building a local support network.',
+        items: [
+          'Confirm PR card status',
+          'Search jobs and prepare a resume',
+          'Register children for school',
+          'Explore community and support groups',
+        ],
       },
     ],
   },
@@ -80,14 +98,45 @@ export const sections = [
       },
       {
         title: 'Provincial health card',
-        description: 'Each province has its own process: OHIP, BC Services Card, RAMQ, etc. Check local wait times and required documents.',
+        description: 'Each province has its own process: OHIP (Ontario), BC Services Card (BC), RAMQ (Quebec), etc. Check local wait times and required documents.',
         links: [
           { label: 'Health care in Canada', url: 'https://www.canada.ca/en/health-canada/services/health-care-system.html' },
         ],
       },
       {
+        title: 'PR Card',
+        description: 'Confirm your status online and apply for the physical card if needed. Use the IRCC portal.',
+        links: [
+          { label: 'IRCC PR Card', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html' },
+        ],
+      },
+      {
         title: 'Driver’s license conversion',
-        description: 'Learn how to convert your foreign driver’s license and what documents each province accepts.',
+        description: 'Convert your foreign license: Ontario requires G1 test, BC requires knowledge test, etc. Bring passport and proof of address.',
+        links: [
+          { label: 'Driver license by province', url: 'https://www.canada.ca/en/services/immigration-citizenship.html' },
+        ],
+      },
+      {
+        title: 'Bank Account',
+        description: 'Open an account with newcomer packages at banks like RBC, TD, Scotiabank. Bring SIN, passport, and proof of address.',
+        links: [
+          { label: 'Newcomer banking', url: 'https://www.canada.ca/en/financial-consumer-agency/services/newcomers.html' },
+        ],
+      },
+      {
+        title: 'CRA My Account',
+        description: 'Register for online access to file taxes, check benefits, and manage your tax information.',
+        links: [
+          { label: 'CRA My Account', url: 'https://www.canada.ca/en/revenue-agency/services/child-family-benefits/child-family-benefits-calculator.html' },
+        ],
+      },
+      {
+        title: 'IRCC Portal',
+        description: 'Use the Immigration, Refugees and Citizenship Canada online portal for applications and status checks.',
+        links: [
+          { label: 'IRCC Portal', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html' },
+        ],
       },
     ],
   },
