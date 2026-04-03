@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPopularTeams();
     loadPopularPlayers();
     setupSearch();
+    setupFilters();
 
     // Check if there's a search query in URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,6 +14,21 @@ document.addEventListener('DOMContentLoaded', function() {
         performSearch(searchQuery);
     }
 });
+
+function setupFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let currentFilter = 'all';
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+        });
+    });
+}
 
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
@@ -36,6 +52,7 @@ function setupSearch() {
 async function performSearch(query) {
     const resultsSection = document.getElementById('searchResults');
     const resultsContainer = document.getElementById('resultsContainer');
+    const resultsCount = document.getElementById('resultsCount');
 
     resultsSection.style.display = 'block';
     resultsContainer.innerHTML = '<div class="text-center"><i class="fas fa-spinner fa-spin fa-2x"></i></div>';
@@ -65,6 +82,29 @@ async function performSearch(query) {
                 league: 'La Liga',
                 country: 'Spain',
                 logo: 'https://media.api-football.com/teams/541.png'
+            },
+            {
+                type: 'player',
+                name: 'Cristiano Ronaldo',
+                team: 'Al Nassr',
+                position: 'Forward',
+                nationality: 'Portugal',
+                photo: 'https://media.api-football.com/players/874.png'
+            },
+            {
+                type: 'team',
+                name: 'Bayern Munich',
+                league: 'Bundesliga',
+                country: 'Germany',
+                logo: 'https://media.api-football.com/teams/157.png'
+            },
+            {
+                type: 'player',
+                name: 'Kylian Mbappé',
+                team: 'PSG',
+                position: 'Forward',
+                nationality: 'France',
+                photo: 'https://media.api-football.com/players/158.png'
             }
         ];
 
@@ -74,30 +114,45 @@ async function performSearch(query) {
 
         if (filteredResults.length === 0) {
             resultsContainer.innerHTML = '<div class="text-center text-muted">No results found for your search.</div>';
+            resultsCount.textContent = '0 results';
             return;
         }
+
+        resultsCount.textContent = `${filteredResults.length} result${filteredResults.length === 1 ? '' : 's'}`;
 
         resultsContainer.innerHTML = filteredResults.map(result => {
             if (result.type === 'team') {
                 return `
-                    <div class="match-card">
-                        <div class="d-flex align-items-center">
-                            <img src="${result.logo}" alt="${result.name}" style="width: 50px; height: 50px; margin-right: 15px;">
-                            <div>
-                                <h5 class="mb-1">${result.name}</h5>
-                                <p class="mb-0 text-muted">${result.league} • ${result.country}</p>
+                    <div class="team-card">
+                        <img src="${result.logo}" alt="${result.name}" class="team-logo">
+                        <h3 class="team-name">${result.name}</h3>
+                        <p class="team-country">${result.league} • ${result.country}</p>
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">85</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2023</span>
+                                <span class="stat-label">Founded</span>
                             </div>
                         </div>
                     </div>
                 `;
             } else {
                 return `
-                    <div class="match-card">
-                        <div class="d-flex align-items-center">
-                            <img src="${result.photo}" alt="${result.name}" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;">
-                            <div>
-                                <h5 class="mb-1">${result.name}</h5>
-                                <p class="mb-0 text-muted">${result.team} • ${result.position} • ${result.nationality}</p>
+                    <div class="player-card">
+                        <img src="${result.photo}" alt="${result.name}" class="player-photo">
+                        <h3 class="player-name">${result.name}</h3>
+                        <p class="player-position">${result.team} • ${result.position}</p>
+                        <div class="player-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">94</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">35</span>
+                                <span class="stat-label">Age</span>
                             </div>
                         </div>
                     </div>
@@ -108,6 +163,7 @@ async function performSearch(query) {
     } catch (error) {
         console.error('Error performing search:', error);
         resultsContainer.innerHTML = '<div class="text-center text-danger">Error performing search. Please try again later.</div>';
+        resultsCount.textContent = '0 results';
     }
 }
 
@@ -116,19 +172,31 @@ async function loadPopularTeams() {
 
     // Mock popular teams
     const popularTeams = [
-        { name: 'Manchester City', league: 'Premier League', logo: 'https://media.api-football.com/teams/50.png' },
-        { name: 'Real Madrid', league: 'La Liga', logo: 'https://media.api-football.com/teams/541.png' },
-        { name: 'Bayern Munich', league: 'Bundesliga', logo: 'https://media.api-football.com/teams/157.png' },
-        { name: 'Juventus', league: 'Serie A', logo: 'https://media.api-football.com/teams/496.png' },
-        { name: 'Liverpool', league: 'Premier League', logo: 'https://media.api-football.com/teams/40.png' },
-        { name: 'Barcelona', league: 'La Liga', logo: 'https://media.api-football.com/teams/529.png' }
+        { name: 'Manchester City', league: 'Premier League', country: 'England', logo: 'https://media.api-football.com/teams/50.png' },
+        { name: 'Real Madrid', league: 'La Liga', country: 'Spain', logo: 'https://media.api-football.com/teams/541.png' },
+        { name: 'Bayern Munich', league: 'Bundesliga', country: 'Germany', logo: 'https://media.api-football.com/teams/157.png' },
+        { name: 'Juventus', league: 'Serie A', country: 'Italy', logo: 'https://media.api-football.com/teams/496.png' },
+        { name: 'Liverpool', league: 'Premier League', country: 'England', logo: 'https://media.api-football.com/teams/40.png' },
+        { name: 'Barcelona', league: 'La Liga', country: 'Spain', logo: 'https://media.api-football.com/teams/529.png' },
+        { name: 'PSG', league: 'Ligue 1', country: 'France', logo: 'https://media.api-football.com/teams/85.png' },
+        { name: 'Chelsea', league: 'Premier League', country: 'England', logo: 'https://media.api-football.com/teams/49.png' }
     ];
 
     container.innerHTML = popularTeams.map(team => `
-        <div class="league-card">
-            <img src="${team.logo}" alt="${team.name}" style="width: 60px; height: 60px; margin-bottom: 10px;">
-            <h5>${team.name}</h5>
-            <small class="text-muted">${team.league}</small>
+        <div class="team-card">
+            <img src="${team.logo}" alt="${team.name}" class="team-logo">
+            <h3 class="team-name">${team.name}</h3>
+            <p class="team-country">${team.league} • ${team.country}</p>
+            <div class="team-stats">
+                <div class="stat-item">
+                    <span class="stat-value">85</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">2023</span>
+                    <span class="stat-label">Founded</span>
+                </div>
+            </div>
         </div>
     `).join('');
 }
@@ -138,16 +206,34 @@ async function loadPopularPlayers() {
 
     // Mock popular players
     const popularPlayers = [
-        { name: 'Lionel Messi', team: 'Inter Miami', photo: 'https://media.api-football.com/players/154.png' },
-        { name: 'Cristiano Ronaldo', team: 'Al Nassr', photo: 'https://media.api-football.com/players/874.png' },
-        { name: 'Kylian Mbappé', team: 'PSG', photo: 'https://media.api-football.com/players/158.png' },
-        { name: 'Erling Haaland', team: 'Man City', photo: 'https://media.api-football.com/players/1100.png' },
-        { name: 'Neymar', team: 'Al Hilal', photo: 'https://media.api-football.com/players/276.png' },
-        { name: 'Kevin De Bruyne', team: 'Man City', photo: 'https://media.api-football.com/players/629.png' }
+        { name: 'Lionel Messi', team: 'Inter Miami', position: 'Forward', nationality: 'Argentina', photo: 'https://media.api-football.com/players/154.png' },
+        { name: 'Cristiano Ronaldo', team: 'Al Nassr', position: 'Forward', nationality: 'Portugal', photo: 'https://media.api-football.com/players/874.png' },
+        { name: 'Kylian Mbappé', team: 'PSG', position: 'Forward', nationality: 'France', photo: 'https://media.api-football.com/players/158.png' },
+        { name: 'Erling Haaland', team: 'Man City', position: 'Forward', nationality: 'Norway', photo: 'https://media.api-football.com/players/1100.png' },
+        { name: 'Neymar', team: 'Al Hilal', position: 'Forward', nationality: 'Brazil', photo: 'https://media.api-football.com/players/276.png' },
+        { name: 'Kevin De Bruyne', team: 'Man City', position: 'Midfielder', nationality: 'Belgium', photo: 'https://media.api-football.com/players/629.png' },
+        { name: 'Mohamed Salah', team: 'Liverpool', position: 'Forward', nationality: 'Egypt', photo: 'https://media.api-football.com/players/306.png' },
+        { name: 'Karim Benzema', team: 'Al Ittihad', position: 'Forward', nationality: 'France', photo: 'https://media.api-football.com/players/237.png' }
     ];
 
     container.innerHTML = popularPlayers.map(player => `
-        <div class="match-card">
+        <div class="player-card">
+            <img src="${player.photo}" alt="${player.name}" class="player-photo">
+            <h3 class="player-name">${player.name}</h3>
+            <p class="player-position">${player.team} • ${player.position}</p>
+            <div class="player-stats">
+                <div class="stat-item">
+                    <span class="stat-value">94</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">35</span>
+                    <span class="stat-label">Age</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
             <div class="text-center">
                 <img src="${player.photo}" alt="${player.name}" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;">
                 <h6>${player.name}</h6>
