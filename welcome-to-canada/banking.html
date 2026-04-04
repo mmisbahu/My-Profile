@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking - Welcome to Canada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-maple-leaf"></i> Welcome to Canada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="banking.html">Banking</a></li>
+                    <li class="nav-item"><button class="btn btn-language" onclick="toggleLanguage()"><i class="fas fa-globe"></i> Français</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-university"></i> Banking in Canada</h1>
+            <p>How to open a bank account and understand banking in Canada</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- Why Open a Bank Account -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> Why You Need a Bank Account</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <i class="fas fa-money-check"></i>
+                        <h4>Direct Deposit</h4>
+                        <p>Employers deposit your salary directly to your account</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Debit Card</h4>
+                        <p>Pay bills, buy groceries, withdraw cash from ATMs</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Credit History</h4>
+                        <p>Build Canadian credit for loans, mortgages, apartment rentals</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Safety</h4>
+                        <p>Secure place to store your money (insured by CDIC)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- When to Open Account -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-clock"></i> When to Open Your Account</h2>
+            <div class="alert alert-success">
+                <i class="fas fa-calendar"></i> <strong>Open within your first week!</strong> Most banks have newcomer packages and staff who understand your situation.
+            </div>
+        </section>
+
+        <!-- How to Open Account -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-steps"></i> Steps to Open an Account</h2>
+            <div class="steps-list">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h5>Find a Bank & Visit</h5>
+                        <p>Major banks have branches everywhere. Go to any branch.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h5>Show Your Documents</h5>
+                        <p>Bring: Passport, COPR, proof of Canadian address (lease, utility bill, or letter from friend)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h5>Choose Account Type</h5>
+                        <p>Most offer "Newcomer Packages" with no minimum balance and free banking for 6-12 months</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div>
+                        <h5>Deposit Initial Amount</h5>
+                        <p>Deposit $100+ (varies by bank). Can be cash or check.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <div>
+                        <h5>Get Your Cards</h5>
+                        <p>Receive debit card (immediately or in 5 days) and start using your account</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Canadian Banks -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-bank"></i> Major Canadian Banks</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="bank-card">
+                        <h4>TD Bank (Toronto-Dominion)</h4>
+                        <p><strong>Newcomer Package:</strong> 6 months free banking</p>
+                        <p><strong>Branches:</strong> Everywhere in Canada</p>
+                        <p><strong>Phone:</strong> 1-416-944-6367</p>
+                        <a href="https://www.td.com/ca/en/banking/newcomer" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="bank-card">
+                        <h4>RBC (Royal Bank of Canada)</h4>
+                        <p><strong>Newcomer Package:</strong> 6 months free banking</p>
+                        <p><strong>Branches:</strong> Nationwide coverage</p>
+                        <p><strong>Phone:</strong> 1-800-769-2511</p>
+                        <a href="https://www.rbc.com/newcomer" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="bank-card">
+                        <h4>Scotiabank</h4>
+                        <p><strong>Newcomer Package:</strong> 6 months free, waived fees</p>
+                        <p><strong>Branches:</strong> All major cities</p>
+                        <p><strong>Phone:</strong> 1-800-472-6842</p>
+                        <a href="https://www.scotiabank.com/ca/newcomer" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="bank-card">
+                        <h4>BMO (Bank of Montreal)</h4>
+                        <p><strong>Newcomer Package:</strong> Reduced fees, no minimum</p>
+                        <p><strong>Branches:</strong> Nation-wide</p>
+                        <p><strong>Phone:</strong> 1-877-225-5266</p>
+                        <a href="https://www.bmo.com/ca/newcomer" target="_blank" class="btn btn-sm btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You'll Need -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-checklist"></i> Documents You'll Need</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Required:</h5>
+                    <ul>
+                        <li><strong>Valid Passport</strong></li>
+                        <li><strong>COPR (Confirmation of Permanent Residence)</strong></li>
+                        <li><strong>Proof of Canadian Address:</strong>
+                            <ul>
+                                <li>Lease/rental agreement</li>
+                                <li>Utility bill (gas, hydro, internet)</li>
+                                <li>Letter from landlord or friend</li>
+                                <li>Hotel bill with address</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credit Card -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-credit-card"></i> Building Credit & Credit Cards</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <h4>Why Build Credit?</h4>
+                        <ul>
+                            <li>Get better interest rates on loans</li>
+                            <li>Rent apartments more easily</li>
+                            <li>Qualify for mortgages</li>
+                            <li>Get credit cards with rewards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <h4>How to Build Credit:</h4>
+                        <ul>
+                            <li>Use your debit card frequently</li>
+                            <li>Apply for a "Secured Credit Card"</li>
+                            <li>Pay all bills on time</li>
+                            <li>Keep credit card balance low</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning mt-4">
+                <i class="fas fa-warning"></i> <strong>No Credit History?</strong> Most newcomers don't have a Canadian credit score. Start with a secured credit card, which requires a deposit. After 6-12 months of good payment history, you can get a regular card.
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <a href="documents.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="housing.html" class="btn btn-canada">Next: Housing <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Welcome to Canada. Not an official government website.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

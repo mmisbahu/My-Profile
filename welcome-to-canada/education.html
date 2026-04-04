@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & Language - Welcome to Canada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-maple-leaf"></i> Welcome to Canada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="education.html">Education</a></li>
+                    <li class="nav-item"><button class="btn btn-language" onclick="toggleLanguage()"><i class="fas fa-globe"></i> Français</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-graduation-cap"></i> Education & Language in Canada</h1>
+            <p>Free classes, school enrollment, and improving your English or French</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- Free Language Programs -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-language"></i> FREE English & French Classes</h2>
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i> <strong>No cost, funded by government!</strong> These programs are FREE for newcomers to improve your language skills.
+            </div>
+
+            <h5 class="mt-4">LINC Program (Language Instruction for Newcomers)</h5>
+            <div class="info-card mb-4">
+                <p>Official government program offering FREE English classes</p>
+                <ul>
+                    <li><strong>Who:</strong> Permanent residents and refugees</li>
+                    <li><strong>Cost:</strong> FREE</li>
+                    <li><strong>Levels:</strong> Beginner to Advanced</li>
+                    <li><strong>Where:</strong> Community centers, schools, libraries</li>
+                    <li><strong>Schedule:</strong> Daytime, evening, weekend classes</li>
+                </ul>
+                <p class="mt-3"><strong>How to find LINC:</strong> Contact your settlement agency or visit <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrants/live-work-study/language-matters.html" target="_blank">canada.ca</a></p>
+            </div>
+
+            <h5>Similar Programs by Province:</h5>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>Ontario - LINC/ESL</h5>
+                        <p>Offered through community colleges and non-profits</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>British Columbia - ELSA</h5>
+                        <p>English Language Services for Adults</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>Alberta - LINC/ESL</h5>
+                        <p>Available through colleges and settlement agencies</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>Quebec - French Classes</h5>
+                        <p>FREE French training for immigrants</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrolling Children in School -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-school"></i> Enrolling Children in School</h2>
+            <h5>Steps to Enroll:</h5>
+            <div class="steps-list">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h5>Find your school boundary</h5>
+                        <p>Check which school covers your residential area</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h5>Gather required documents</h5>
+                        <p>Proof of residency, birth certificate, proof of vaccination</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h5>Visit the school office</h5>
+                        <p>Fill out enrollment forms and register your child</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div>
+                        <h5>Start school</h5>
+                        <p>Get schedule and supplies list. Attend orientation if available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle"></i> <strong>School is FREE!</strong> Public schools in Canada don't charge tuition for children of permanent residents (K-Grade 12).
+            </div>
+
+            <h5 class="mt-4">Basic Numbers Age Groups:</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h5>Elementary</h5>
+                        <p>Ages 4-5 to 11-12</p>
+                        <p>Kindergarten to Grade 6 (varies by province)</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h5>Middle School</h5>
+                        <p>Ages 11-14</p>
+                        <p>Grade 7 to 8 or 9</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <h5>High School</h5>
+                        <p>Ages 14-18</p>
+                        <p>Grade 9/10 to 12</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Year Calendar -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-calendar"></i> Canadian School Year</h2>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><strong>September - June</strong></td>
+                                <td>School year (with breaks)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>December - January</strong></td>
+                                <td>Winter Break (2-3 weeks)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>March/April</strong></td>
+                                <td>Spring Break (1 week)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>July - August</strong></td>
+                                <td>Summer Holidays (2 months)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Costs and Supplies -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-book"></i> School Costs & Supplies</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h5><i class="fas fa-free"></i> FREE</h5>
+                        <ul>
+                            <li>Tuition</li>
+                            <li>Books</li>
+                            <li>Most supplies</li>
+                            <li>Lunch programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h5><i class="fas fa-dollar-sign"></i> Costs (Optional)</h5>
+                        <ul>
+                            <li>School trips ($50-200)</li>
+                            <li>Sports teams ($100-300)</li>
+                            <li>Uniforms (if required)</li>
+                            <li>Extracurriculars</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Francophone Education (Quebec) -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-flag"></i> French-Language Education (Quebec)</h2>
+            <div class="alert alert-info">
+                <i class="fas fa-check-circle"></i> <strong>French is official language in Quebec.</strong> Most schools teach IN FRENCH except for anglophone schools (if eligible).
+            </div>
+
+            <h5>Language of Instruction Rules:</h5>
+            <ul>
+                <li><strong>Francophone schools:</strong> Instruction in French (most schools)</li>
+                <li><strong>English schools:</strong> Only eligible if parent(s) were educated in English in Canada</li>
+                <li><strong>Before arrival:</strong> Apply to English board if eligible</li>
+            </ul>
+
+            <p class="mt-3"><strong>Learn French:</strong> Your child will learn French through school. Adults can also take free/affordable French courses.</p>
+        </section>
+
+        <!-- Post-Secondary Education -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-university"></i> Post-Secondary Education (College/University)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>University</h5>
+                        <p><strong>Tuition (International):</strong> $20,000-35,000/year</p>
+                        <p><strong>Domestic (PR):</strong> $5,000-15,000/year (varies)</p>
+                        <p><strong>Duration:</strong> 3-4 years for bachelor's</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>College</h5>
+                        <p><strong>Tuition:</strong> $3,000-10,000/year</p>
+                        <p><strong>Programs:</strong> 2-3 year diplomas (practical skills)</p>
+                        <p><strong>Great for:</strong> Trades, tech, business</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success mt-4">
+                <i class="fas fa-info-circle"></i> <strong>As a PR:</strong> You can get student loans and bursaries. Many provinces also have free/subsidized tuition programs.
+            </div>
+        </section>
+
+        <!-- Other Learning Resources -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-laptop"></i> Other Learning Resources</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>Online Learning</h5>
+                        <ul>
+                            <li>Coursera, edX - Free courses</li>
+                            <li>Khan Academy - Math, science</li>
+                            <li>YouTube - Language tutorials</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>Library Resources</h5>
+                        <ul>
+                            <li>FREE library card</li>
+                            <li>English conversation groups</li>
+                            <li>ESL resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Training -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Skills Training & Trades</h2>
+            <div class="info-card">
+                <h4>Vocational Training Programs (Trades):</h4>
+                <p>If you want to learn a trade (plumber, electrician, carpenter, etc.):</p>
+                <ul>
+                    <li><strong>Community colleges</strong> - 2 year programs</li>
+                    <li><strong>Apprenticeships</strong> - On-the-job training</li>
+                    <li><strong>Cost:</strong> $3,000-10,000</li>
+                    <li><strong>Jobs:</strong> High demand, good pay ($60,000+)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <a href="employment.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="help.html" class="btn btn-canada">Next: Help & Contacts <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Welcome to Canada. Not an official government website.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

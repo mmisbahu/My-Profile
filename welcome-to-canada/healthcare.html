@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare - Welcome to Canada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-maple-leaf"></i> Welcome to Canada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="healthcare.html">Healthcare</a></li>
+                    <li class="nav-item"><button class="btn btn-language" onclick="toggleLanguage()"><i class="fas fa-globe"></i> Français</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-hospital"></i> Healthcare in Canada</h1>
+            <p>How Canadian healthcare works and how to access medical services</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- How Healthcare Works -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> How Canadian Healthcare Works</h2>
+            <div class="info-card">
+                <h4>The Canadian System is Public & FREE!</h4>
+                <p>Canada has universal healthcare - all permanent residents and citizens have access to free basic medical services.</p>
+                <ul class="mt-3">
+                    <li><strong>Doctor visits:</strong> FREE (covered by provincial plan)</li>
+                    <li><strong>Hospital stays:</strong> FREE</li>
+                    <li><strong>Ambulance:</strong> FREE (in emergencies)</li>
+                    <li><strong>Prescriptions:</strong> NOT free (you pay at pharmacy, though some have insurance)</li>
+                    <li><strong>Dental & Vision:</strong> NOT covered (you pay out of pocket or private insurance)</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-success mt-4">
+                <i class="fas fa-check-circle"></i> <strong>Emergency Care:</strong> Can access emergency room immediately, even without provincial health card. Just bring ID.
+            </div>
+        </section>
+
+        <!-- Finding a Family Doctor -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-stethoscope"></i> Finding a Family Doctor</h2>
+            <h5>Steps:</h5>
+            <div class="steps-list">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h5>Call or visit doctor's office</h5>
+                        <p>Ask if they're taking new patients</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h5>Fill out patient forms</h5>
+                        <p>Medical history, medications, allergies</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h5>Book appointment</h5>
+                        <p>Usually 2-4 weeks wait for first appointment</p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mt-4">Ways to Find a Doctor:</h5>
+            <ul>
+                <li><strong>Your health unit website</strong> - Most provinces have doctor finders</li>
+                <li><strong>Ask your settlement agency</strong> - They have lists of welcoming doctors</li>
+                <li><strong>Walk-in clinics</strong> - No appointment needed (wait time varies)</li>
+                <li><strong>Virtual doctors</strong> - Many provinces offer telehealth options</li>
+            </ul>
+
+            <div class="alert alert-warning mt-4">
+                <i class="fas fa-clock"></i> <strong>Long Waits:</strong> it can take months to find a family doctor. In the meantime, use walk-in clinics or urgent care centers.
+            </div>
+        </section>
+
+        <!-- Urgent Care Options -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-first-aid"></i> When You Need Quick Help</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5><i class="fas fa-clipboard-list"></i> Walk-In Clinic</h5>
+                        <p>No appointment, see doctor in 1-4 hours</p>
+                        <p><strong>Cost:</strong> FREE (with health card)</p>
+                        <p><strong>Good for:</strong> Minor injuries, common illnesses</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5><i class="fas fa-phone"></i> Telehealth</h5>
+                        <p>Phone or video call with doctor</p>
+                        <p><strong>Cost:</strong> FREE or small fee</p>
+                        <p><strong>Good for:</strong> Quick advice, non-emergency</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5><i class="fas fa-ambulance"></i> Urgent Care Centers</h5>
+                        <p>Open 24/7, trained for emergencies</p>
+                        <p><strong>Cost:</strong> FREE (for emergencies)</p>
+                        <p><strong>Good for:</strong> Serious but non-life-threatening</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5><i class="fas fa-hospital"></i> Emergency Room (Hospital)</h5>
+                        <p>For life-threatening emergencies</p>
+                        <p><strong>Cost:</strong> FREE</p>
+                        <p><strong>Call:</strong> 911 for ambulance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prescriptions & Pharmacy -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-pills"></i> Prescriptions & Medications</h2>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>How to Get Prescription Medications:</h5>
+                    <ol>
+                        <li>Doctor writes prescription after your visit</li>
+                        <li>Take prescription to any pharmacy (Shoppers Drug Mart, Rexall, Costco Pharmacy, etc.)</li>
+                        <li>Pay for the medication (costs vary)</li>
+                        <li>Pick up usually within 24 hours</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4>Ways to Save on Medications:</h4>
+                <ul>
+                    <li>Ask for generic versions (much cheaper than brand names)</li>
+                    <li>Check if your employer offers drug benefits</li>
+                    <li>Compare prices at different pharmacies</li>
+                    <li>Look for coupons or pharmacist assistance programs</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Mental Health Services -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-brain"></i> Mental Health Support</h2>
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i> <strong>Mental health is important!</strong> Many newcomers experience stress, anxiety, or homesickness. Support is free and available.
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5>Counseling Services</h5>
+                        <p>Usually FREE through settlement agencies or community health centers</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="service-card">
+                        <h5>Crisis Helplines</h5>
+                        <p><strong>Canada Suicide Prevention Service:</strong> 1-833-456-4566</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dental & Vision -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-tooth"></i> Dental & Vision (NOT Covered by Healthcare)</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h4>Dental</h4>
+                        <p><strong>NOT free</strong> except for children (some provinces)</p>
+                        <p><strong>Cost:</strong> Cleaning $100-200, fillings $200-500</p>
+                        <p><strong>Options:</strong> Private dental insurance, community health centers</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h4>Vision</h4>
+                        <p><strong>NOT free</strong> except for children (some provinces)</p>
+                        <p><strong>Cost:</strong> Eye exam $100-200, glasses/contacts $200-600</p>
+                        <p><strong>Options:</strong> Private insurance, budget optometrists</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bringing Medications -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-plane"></i> Bringing Medications to Canada</h2>
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> You can bring prescription medications you need personally to Canada, but they must be:
+                <ul class="mt-2">
+                    <li>In original labeled bottles with your name</li>
+                    <li>For personal use only (not to sell)</li>
+                    <li>Declare them at customs</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <a href="housing.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="employment.html" class="btn btn-canada">Next: Employment <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Welcome to Canada. Not an official government website.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

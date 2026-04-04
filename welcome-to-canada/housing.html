@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing - Welcome to Canada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-maple-leaf"></i> Welcome to Canada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="housing.html">Housing</a></li>
+                    <li class="nav-item"><button class="btn btn-language" onclick="toggleLanguage()"><i class="fas fa-globe"></i> Français</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-home"></i> Housing in Canada</h1>
+            <p>Finding temporary and permanent housing without Canadian credit</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- First Week Housing -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-calendar-week"></i> First Week: Temporary Housing</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="housing-option">
+                        <h4><i class="fas fa-hotel"></i> Hotels</h4>
+                        <p><strong>Cost:</strong> $60-150/night</p>
+                        <p>Good for 1-3 nights, comfortable</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="housing-option">
+                        <h4><i class="fas fa-home"></i> Airbnb</h4>
+                        <p><strong>Cost:</strong> $40-100/night</p>
+                        <p>More flexible, kitchen available</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="housing-option">
+                        <h4><i class="fas fa-bed"></i> Hostel</h4>
+                        <p><strong>Cost:</strong> $25-50/night</p>
+                        <p>Budget option, meet other travelers</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="housing-option">
+                        <h4><i class="fas fa-users"></i> Friend/Family</h4>
+                        <p><strong>Cost:</strong> FREE-$500/month</p>
+                        <p>Best option if available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finding Permanent Housing -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-search"></i> Finding Permanent Housing</h2>
+            <h5 class="mt-4">Popular Websites:</h5>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <a href="https://www.kijiji.ca" target="_blank" class="helpful-link">
+                        <i class="fas fa-external-link-alt"></i> Kijiji.ca - Most popular in Canada
+                    </a>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <a href="https://www.craigslist.org/about/sites" target="_blank" class="helpful-link">
+                        <i class="fas fa-external-link-alt"></i> Craigslist - US & Canada
+                    </a>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <a href="https://www.rentals.ca" target="_blank" class="helpful-link">
+                        <i class="fas fa-external-link-alt"></i> Rentals.ca - Canada rental portal
+                    </a>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <a href="https://www.airbnb.ca" target="_blank" class="helpful-link">
+                        <i class="fas fa-external-link-alt"></i> Airbnb - Short & long term
+                    </a>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <a href="https://www.facebook.com" target="_blank" class="helpful-link">
+                        <i class="fas fa-external-link-alt"></i> Facebook Groups - Local housing groups
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Understanding Rental Costs -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-dollar-sign"></i> Understanding Rental Costs</h2>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Average Rent by City (1-Bedroom)</h5>
+                    <ul>
+                        <li><strong>Toronto:</strong> $2,000-2,500/month</li>
+                        <li><strong>Vancouver:</strong> $2,200-2,800/month</li>
+                        <li><strong>Calgary:</strong> $1,300-1,700/month</li>
+                        <li><strong>Montreal:</strong> $1,200-1,600/month</li>
+                    </ul>
+                    <p class="mt-3"><small><em>Prices vary by neighborhood, distance from downtown, and amenities.</em></small></p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4>What's Included in Rent?</h4>
+                <ul>
+                    <li><strong>Utilities:</strong> Heat, water, electricity - sometimes included, often separate</li>
+                    <li><strong>Parking:</strong> Extra $50-200/month if not included</li>
+                    <li><strong>Internet:</strong> Usually not included ($50-100/month)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Renting Without Credit History -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> Renting Without Canadian Credit</h2>
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> <strong>Most landlords understand!</strong> Many have experience with newcomers and immigrants without Canadian credit history.
+            </div>
+
+            <h5>What You Can Provide Instead:</h5>
+            <ul class="steps-list">
+                <li><strong>Proof of Income</strong> - Job offer letter, employment contract, or letter from employer</li>
+                <li><strong>Bank Reference</strong> - Letter from your bank showing your account and deposits</li>
+                <li><strong>International Credit Report</strong> - Get from previous country if available</li>
+                <li><strong>References from Friends/Colleagues</strong> - Character references</li>
+                <li><strong>Higher Deposit</strong> - Offer first & last month's rent upfront</li>
+                <li><strong>Guarantor</strong> - Canadian friend/family member with good credit</li>
+            </ul>
+
+            <div class="alert alert-warning mt-4">
+                <i class="fas fa-warning"></i> <strong>Avoid Scams:</strong> Do NOT send money before seeing the apartment in person. Verify the landlord is legitimate before paying anything.
+            </div>
+        </section>
+
+        <!-- Tenant Rights -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Know Your Tenant Rights</h2>
+            <div class="accordion" id="tenantRights">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ontario-rights">
+                            Ontario - Residential Tenancies Act
+                        </button>
+                    </h2>
+                    <div id="ontario-rights" class="accordion-collapse collapse show" data-bs-parent="#tenantRights">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Landlord must give 60 days notice for rent increase</li>
+                                <li>Security deposit = 1 month's rent (landlord must return)</li>
+                                <li>Rent increase can't exceed guideline amount yearly</li>
+                                <li>Landlord can't evict without proper notice (usually 60 days)</li>
+                            </ul>
+                            <a href="https://www.ontario.ca/page/residential-tenancies-act-2006" target="_blank">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bc-rights">
+                            British Columbia - Residential Tenancy Act
+                        </button>
+                    </h2>
+                    <div id="bc-rights" class="accordion-collapse collapse" data-bs-parent="#tenantRights">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Security deposit limited to 1/2 month's rent</li>
+                                <li>2 months notice for rent increase (max annual increase set by govt)</li>
+                                <li>Landlord can't evict without legal reasons</li>
+                                <li>Fixed-term leases renew automatically month-to-month</li>
+                            </ul>
+                            <a href="https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies" target="_blank">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ab-rights">
+                            Alberta - Residential Tenancies Act
+                        </button>
+                    </h2>
+                    <div id="ab-rights" class="accordion-collapse collapse" data-bs-parent="#tenantRights">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Landlord needs 30 days notice to increase rent</li>
+                                <li>Security deposit = 1 month's rent</li>
+                                <li>No maximum limit on rent increases</li>
+                                <li>Rights and obligations clearly defined in act</li>
+                            </ul>
+                            <a href="https://www.alberta.ca/landlords-and-tenants.aspx" target="_blank">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apartment Hunting Tips -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Tips for Apartment Hunting</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="tip-card">
+                        <h5><i class="fas fa-camera"></i> Ask for Photos/Video</h5>
+                        <p>Get detailed images or virtual tour before visiting</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="tip-card">
+                        <h5><i class="fas fa-map"></i> Check the Location</h5>
+                        <p>Visit the neighborhood at different times of day</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="tip-card">
+                        <h5><i class="fas fa-bus"></i> Transit Access</h5>
+                        <p>Convenient to work, school, shops = saves money</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="tip-card">
+                        <h5><i class="fas fa-certificate"></i> Get Everything in Writing</h5>
+                        <p>Signed lease with clear terms protects you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <a href="banking.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="healthcare.html" class="btn btn-canada">Next: Healthcare <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Welcome to Canada. Not an official government website.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>
